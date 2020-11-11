@@ -1,8 +1,8 @@
 class SongsController < ApplicationController
-  def index
-  end
+  def index; end
 
   def show
+    @song = Song.find(params[:id])
   end
 
   def new
@@ -39,7 +39,7 @@ class SongsController < ApplicationController
   def destroy
     @song = Song.find(params[:id])
     @song.destroy
-    flash[:notice] = "Song deleted."
+    flash[:notice] = 'Song deleted.'
     redirect_to songs_path
   end
 
